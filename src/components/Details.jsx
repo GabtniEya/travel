@@ -1,9 +1,10 @@
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import RatingStars from './RatingStars';
 
-function DestinationDetails({ destinations }) {
+function Details({ destinations }) {
   const { id } = useParams();
+  const navigate = useNavigate();
   const destination = destinations.find(
     (item) => String(item.id) === id
   );
@@ -28,8 +29,12 @@ function DestinationDetails({ destinations }) {
 
   return (
     <Container className="py-5">
-      <Button as={Link} to="/destinations" variant="outline-primary" className="mb-4">
-        Retour aux destinations
+      <Button
+        onClick={() => navigate('/')}
+        variant="outline-primary"
+        className="mb-4"
+      >
+        Retour à l’accueil
       </Button>
 
       <Card className="shadow-sm">
@@ -75,4 +80,4 @@ function DestinationDetails({ destinations }) {
   );
 }
 
-export default DestinationDetails;
+export default Details;

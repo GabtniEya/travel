@@ -358,9 +358,13 @@ main {
   margin-top: auto;
   padding-top: 0.7rem;
   border-top: 1px solid #edf1f4;
+  border-radius: 0;
+  background: transparent;
   color: #168aad;
   font-size: 0.87rem;
   font-weight: 750;
+  text-align: left;
+  text-decoration: none;
 }
 
 .destination-card-link span {

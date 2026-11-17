@@ -1,15 +1,11 @@
-import { Card, Badge } from 'react-bootstrap';
+import { Button, Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import RatingStars from './RatingStars';
 
 function DestinationCard({ destination }) {
   return (
-    <Card
-      as={Link}
-      to={`/destinations/${destination.id}`}
-      className="destination-card h-100 shadow-sm text-decoration-none text-reset"
-    >
+    <Card className="destination-card h-100">
       <div className="destination-card-image">
         <Card.Img
           variant="top"
@@ -50,9 +46,14 @@ function DestinationCard({ destination }) {
           </div>
         )}
 
-        <span className="destination-card-link">
-          Découvrir <span aria-hidden="true">→</span>
-        </span>
+        <Button
+          as={Link}
+          to={`/destinations/${destination.id}`}
+          className="destination-card-link"
+          variant="link"
+        >
+          Voir les détails <span aria-hidden="true">→</span>
+        </Button>
       </Card.Body>
     </Card>
   );
